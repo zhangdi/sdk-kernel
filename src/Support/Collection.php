@@ -34,10 +34,7 @@ class Collection implements Countable, IteratorAggregate
      */
     public function get($key, $defaultValue = null)
     {
-        if (!$this->has($key)) {
-            return $defaultValue;
-        }
-        return $this->items[$key];
+        return ArrayHelper::get($this->items, $key, $defaultValue);
     }
 
     /**

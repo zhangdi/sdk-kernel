@@ -78,10 +78,7 @@ abstract class Application extends ContainerBuilder
      */
     public function registerProviders(array $providers)
     {
-        foreach ($providers as $name => $provider) {
-            if (\is_int($name)) {
-                throw new InvalidConfigException('providers array key must be as string.');
-            }
+        foreach ($providers as $provider) {
             $obj = new $provider();
 
             if ($obj instanceof ServiceProviderInterface) {

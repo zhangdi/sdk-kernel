@@ -37,8 +37,8 @@ class BaseClient
     protected $accessToken;
 
     /**
-     * BaseHttpClient constructor.
      * @param Application $app
+     * @param AccessTokenInterface|null $accessToken
      */
     public function __construct(Application $app, AccessTokenInterface $accessToken = null)
     {
@@ -49,10 +49,10 @@ class BaseClient
     /**
      * @return Client
      */
-    public function getHttpClient(): Client
+    protected function getHttpClient(): Client
     {
         if ($this->httpClient == null) {
-            $config = $this->app->getConfig()['http_client'] ?? [];
+            $config = $this->app->config->get('http_client', []);
             $this->httpClient = new Client($config);
         }
         return $this->httpClient;
@@ -61,7 +61,7 @@ class BaseClient
     /**
      * @return HandlerStack
      */
-    public function getHandlerStack(): HandlerStack
+    protected function getHandlerStack(): HandlerStack
     {
         if ($this->handlerStack) {
             return $this->handlerStack;
@@ -88,7 +88,7 @@ class BaseClient
         if ($rawResponse) {
             return $response;
         }
-        return $this->castResponse($response, $this->app->config->get('response_type', 'raw'));
+        return $this->castResponse($response, $this->app->config->get('http_client.response_type', 'raw'));
     }
 
     /**
@@ -98,7 +98,7 @@ class BaseClient
      */
     protected function castResponse(ResponseInterface $response, string $type = null)
     {
-        $type = $type == null ? $type : 'raw';
+        $type = $type !== null ? $type : 'raw';
         switch ($type) {
             case 'json':
                 return \json_decode($response->getBody()->getContents(), true);
