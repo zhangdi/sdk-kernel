@@ -1,0 +1,26 @@
+{
+    "name": "zhangdi/sdk-kernel",
+    "type": "library",
+    "description": "Kernel for develop sdk",
+    "keywords": [],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Zhang Di",
+            "email": "zhangdi_me@163.com"
+        }
+    ],
+    "require": {
+        "php": "^7.1.0",
+        "ext-json": "*",
+        "symfony/dependency-injection": "^4.3",
+        "guzzlehttp/guzzle": "~6.0",
+        "monolog/monolog": "^1.24"
+    },
+    
+    "autoload": {
+        "psr-4": {
+            "ZhangDi\\SdkKernel\\": "src"
+        }
+    }
+}
