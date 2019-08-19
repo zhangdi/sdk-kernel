@@ -4,9 +4,9 @@
 namespace ZhangDi\SdkKernel\Providers;
 
 
+use ZhangDi\Collections\Collection;
 use ZhangDi\SdkKernel\Contracts\ServiceProviderInterface;
 use ZhangDi\SdkKernel\Application;
-use ZhangDi\SdkKernel\Support\Collection;
 
 class ConfigServiceProvider implements ServiceProviderInterface
 {

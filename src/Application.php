@@ -7,12 +7,12 @@ namespace ZhangDi\SdkKernel;
 use GuzzleHttp\Client;
 use Monolog\Logger;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use ZhangDi\Collections\Collection;
 use ZhangDi\SdkKernel\Contracts\ServiceProviderInterface;
 use ZhangDi\SdkKernel\Exceptions\InvalidConfigException;
 use ZhangDi\SdkKernel\Providers\ConfigServiceProvider;
 use ZhangDi\SdkKernel\Providers\LogServiceProvider;
 use ZhangDi\SdkKernel\Providers\RequestServiceProvider;
-use ZhangDi\SdkKernel\Support\Collection;
 
 /**
  * @package ZhangDi\Sdk\Kernel

@@ -15,7 +15,8 @@
         "ext-json": "*",
         "symfony/dependency-injection": "^4.3",
         "guzzlehttp/guzzle": "~6.0",
-        "monolog/monolog": "^1.24"
+        "monolog/monolog": "^1.24",
+        "zhangdi/collections": "*"
     },
     
     "autoload": {
