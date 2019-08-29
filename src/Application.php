@@ -18,7 +18,7 @@ use ZhangDi\SdkKernel\Providers\RequestServiceProvider;
  * @package ZhangDi\Sdk\Kernel
  *
  * @property Logger $logger
- * @property Client $client
+ * @property Client $request
  * @property Collection $config
  */
 abstract class Application extends ContainerBuilder
